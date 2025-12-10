@@ -149,6 +149,3 @@ Raspberry Pi (10.11.0.152)
 ```
 
 ---
-
-# 📄 Licencia
-MIT License
