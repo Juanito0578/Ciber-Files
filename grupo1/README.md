@@ -16,6 +16,12 @@ Este proyecto implementa un sistema completo distribuido entre tres servidores: 
 
 # 🐳 1. Servidor Docker (10.11.0.15)
 
+Ruta del Scripts:
+
+```
+/home/chorizo/scripts/
+```
+
 Ruta del proyecto:
 
 ```
@@ -66,6 +72,11 @@ Docker-ChorizoSQL/
 ---
 
 # 🗄️ 2. Servidor MariaDB + WordPress (10.11.0.16)
+Ruta del Scripts:
+
+```
+/home/chorizopi/scripts/
+```
 
 WordPress se encuentra en:
 
@@ -99,6 +110,12 @@ wp_comments
 ---
 
 # 🐍 3. Raspberry Pi – Escáner de vulnerabilidades (10.11.0.152)
+
+Ruta del Scripts:
+
+```
+/home/chorizopi/scripts/
+```
 
 Ruta del escáner:
 
