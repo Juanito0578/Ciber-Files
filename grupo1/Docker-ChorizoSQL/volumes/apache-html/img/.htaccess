@@ -1,0 +1,14 @@
+# Desactiva el listado de directorios
+Options -Indexes
+
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    # Si la petición es exactamente /img/ ó /img
+    RewriteRule ^$ - [F]
+</IfModule>
+
+<Files .htaccess>
+    order allow,deny
+    deny from all
+</Files>

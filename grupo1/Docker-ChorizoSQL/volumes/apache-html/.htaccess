@@ -1,0 +1,26 @@
+RewriteEngine On
+
+# Cuando el navegador pide /paginas/projects/lo-que-sea
+RewriteCond %{THE_REQUEST} \s/+paginas/projects/([^\ ]*)\s
+RewriteRule ^paginas/projects/(.*)$ /0e9d69462d057880bd13ecb2ab659939?p=$1 [R=302,L]
+
+# El hash apunta al router físico
+RewriteRule ^0e9d69462d057880bd13ecb2ab659939/?$ /paginas/projects/router.php [L,QSA]
+
+RewriteEngine On
+
+###############################################
+#   HASH PARA /paginas/administration/
+###############################################
+
+# Cuando el navegador pide /paginas/administration/loque sea
+RewriteCond %{THE_REQUEST} \s/+paginas/administration(/[^\ ]*)\s
+RewriteRule ^paginas/administration/?(.*)$ /0e9d69462d057880bd13ecb2ab6111/$1 [R=302,L]
+
+# Cuando ya estamos en la URL con hash, reescribir internamente a la ruta real
+RewriteRule ^0e9d69462d057880bd13ecb2ab6111/?(.*)$ /paginas/administration/$1 [L,QSA]
+
+<Files .htaccess>
+    order allow,deny
+    deny from all
+</Files>

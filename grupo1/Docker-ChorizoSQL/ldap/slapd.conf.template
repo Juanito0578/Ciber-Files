@@ -1,0 +1,22 @@
+modulepath /usr/lib/ldap
+moduleload back_mdb
+
+include         /etc/ldap/schema/core.schema
+include         /etc/ldap/schema/cosine.schema
+include         /etc/ldap/schema/inetorgperson.schema
+include         /etc/ldap/schema/nis.schema
+
+TLSCertificateFile /etc/ssl/certs/ldap-server.crt
+TLSCertificateKeyFile /etc/ssl/private/ldap-server.key
+
+pidfile         /var/run/slapd/slapd.pid
+argsfile        /var/run/slapd/slapd.args
+
+database        mdb
+maxsize         1073741824
+suffix          "${SUFFIX}"
+rootdn          "${ROOTDN}"
+rootpw          ${ROOTPW_HASH}
+directory       "/var/lib/ldap"
+
+index           objectClass eq
